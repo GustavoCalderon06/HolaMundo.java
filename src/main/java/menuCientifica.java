@@ -2,15 +2,20 @@ import java.util.Scanner;
 
 public class menuCientifica {
     static Scanner leer = new Scanner(System.in);
-    public static void menuCientifica(){
+
+    public static void mCientifica(){
         try{
             menuCalculadora();
         }catch (Exception e){
             System.out.println("Valor no valido.");
         }
-    }
-    public static void menuCalculadora(){
+        new FigurasGeometricas();
+        new Matrices();
         new CalculadoraCientifica();
+        new calculadoraBasica();
+    }
+
+    public static void menuCalculadora(){
         int eleccion;
         do {
             do {
@@ -18,25 +23,25 @@ public class menuCientifica {
                 eleccion = leer.nextInt();
                 switch (eleccion) {
                     case 1:
-                        CalculadoraCientifica.sumar();
+                        calculadoraBasica.sumar();
                         break;
                     case 2:
-                        CalculadoraCientifica.restar();
+                        calculadoraBasica.restar();
                         break;
                     case 3:
-                        CalculadoraCientifica.multiplicar();
+                        calculadoraBasica.multiplicar();
                         break;
                     case 4:
-                        CalculadoraCientifica.dividir();
+                        calculadoraBasica.dividir();
                         break;
                     case 5:
                         CalculadoraCientifica.raiz();
                         break;
                     case 6:
-                        CalculadoraCientifica.mayor();
+                        calculadoraBasica.mayor();
                         break;
                     case 7:
-                        CalculadoraCientifica.menor();
+                        calculadoraBasica.menor();
                         break;
                     case 8:
                         CalculadoraCientifica.potencia();
@@ -48,7 +53,7 @@ public class menuCientifica {
                         CalculadoraCientifica.ecuacionCuadratica();
                         break;
                     case 11:
-                        CalculadoraCientifica.figurasGeometricas();
+                        FigurasGeometricas.figurasGeometricas();
                         break;
                     case 12:
                         CalculadoraCientifica.sistemaEcuaciones();
@@ -78,33 +83,44 @@ public class menuCientifica {
                         CalculadoraCientifica.tangente();
                         break;
                     case 21:
-                        CalculadoraCientifica.multiplicaSuma();
+                        CalculadoraCientifica.aSeno();
                         break;
                     case 22:
-                        CalculadoraCientifica.senoHiperbolico();
+                        CalculadoraCientifica.aCoseno();
                         break;
                     case 23:
-                        CalculadoraCientifica.cosenoHiperbolico();
+                        CalculadoraCientifica.aTangente();
                         break;
                     case 24:
-                        CalculadoraCientifica.tangenteHiperbolica();
+                        CalculadoraCientifica.senoHiperbolico();
                         break;
                     case 25:
-                        CalculadoraCientifica.menuMatriz();
+                        CalculadoraCientifica.cosenoHiperbolico();
                         break;
                     case 26:
-                        CalculadoraCientifica.valorAbsoluto();
+                        CalculadoraCientifica.tangenteHiperbolica();
                         break;
                     case 27:
-                        CalculadoraCientifica.sumatoria();
+                        Matrices.menuMatriz();
                         break;
                     case 28:
+                        CalculadoraCientifica.valorAbsoluto();
+                        break;
+                    case 29:
+                        CalculadoraCientifica.sumatoria();
+                        break;
+                    case 30:
+                        CalculadoraCientifica.cbrt();
+                        break;
+                    case 31:
                         break;
                 }
-            } while (eleccion < 1 || eleccion > 28);
-        }while (eleccion != 28);
+            } while (eleccion < 1 || eleccion > 31);
+        }while (eleccion != 31);
     }
+
     public static void mostrarOpcionesMenu(){
+        System.out.println("=====MENU=====");
         System.out.println("Qué operación desea realizar? ");
         System.out.println("[1] Sumar");
         System.out.println("[2] Restar");
@@ -126,13 +142,16 @@ public class menuCientifica {
         System.out.println("[18] Seno");
         System.out.println("[19] Coseno");
         System.out.println("[20] Tangeno");
-        System.out.println("[21] Multiplica dos numeros y suma un tercero");
-        System.out.println("[22] Seno hiperbolico");
-        System.out.println("[23] Coseno hiperbolico");
-        System.out.println("[24] Tangente hiperbolica");
-        System.out.println("[25] Matriz");
-        System.out.println("[26] Valor absoluto");
-        System.out.println("[27] Sumatoria");
-        System.out.println("[28] Salir");
+        System.out.println("[21] Arco Seno");
+        System.out.println("[22] Arco Coseno");
+        System.out.println("[23] Arco Tangente");
+        System.out.println("[24] Seno hiperbolico");
+        System.out.println("[25] Coseno hiperbolico");
+        System.out.println("[26] Tangente hiperbolica");
+        System.out.println("[27] Matriz");
+        System.out.println("[28] Valor absoluto");
+        System.out.println("[29] Sumatoria");
+        System.out.println("[30] Raiz cubica");
+        System.out.println("[31] Salir");
     }
 }
