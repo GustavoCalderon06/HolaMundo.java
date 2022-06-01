@@ -1,9 +1,5 @@
 public class trigonometricas {
 
-    public static void trigono(){
-        new CalculadoraCientifica();
-    }
-
     public static void seno(){
         String[] operadores={"numero: "};
         double[] numeros= CalculadoraCientifica.ingresarNumeros(operadores);
@@ -24,6 +20,7 @@ public class trigonometricas {
         double a=Math.tan(numeros[0]);
         CalculadoraCientifica.resultado(a);
     }
+
     public static void aSeno(){
         String[] operadores={"numero: "};
         double[] numeros=CalculadoraCientifica.ingresarNumeros(operadores);

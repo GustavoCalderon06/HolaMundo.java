@@ -52,15 +52,6 @@ public class CalculadoraCientifica {
         return numeros;
     }
 
-    public static double[] ingresarCoeficientes(String[] parametros) {
-        double[] coeficientes = new double[parametros.length];
-        for (int i = 0; i < coeficientes.length; i++) {
-            System.out.println("Valor de "+parametros[i]+"?:");
-            coeficientes[i] = leer.nextDouble();
-        }
-        return coeficientes;
-    }
-
     public static void factoriales() {
         System.out.println("ingrese dato: ");
         double a = leer.nextDouble();

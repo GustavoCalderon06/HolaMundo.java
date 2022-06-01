@@ -7,21 +7,21 @@ public class ecuaciones {
 
     public static void ecuacionCuadratica() {
         String[] parametrosCuadratica = {"a","b","c"};
-        double[] coeficientes = CalculadoraCientifica.ingresarCoeficientes(parametrosCuadratica);
+        double[] coeficientes = CalculadoraCientifica.ingresarNumeros(parametrosCuadratica);
         double[] solucionesCuadratica = calcularEcuacionCuadratica(coeficientes);
         mostrarEcuacionCuadratica(solucionesCuadratica);
     }
 
     public static void sistemaEcuaciones() {
         String[] parametrosSistemaEcuaciones = {"a1","b1","c1","a2","b2","c2"};
-        double[] coeficientes = CalculadoraCientifica.ingresarCoeficientes(parametrosSistemaEcuaciones);
+        double[] coeficientes = CalculadoraCientifica.ingresarNumeros(parametrosSistemaEcuaciones);
         double[] solucionesSistema = calcularSistemaEcuaciones(coeficientes);
         mostrarSistemaEcuaciones(solucionesSistema);
     }
 
     public static void ecuacionRecta() {
         String[] parametrosRecta = {"x1","y1","x2","y2"};
-        double[] coeficientes = CalculadoraCientifica.ingresarCoeficientes(parametrosRecta);
+        double[] coeficientes = CalculadoraCientifica.ingresarNumeros(parametrosRecta);
         double[] solucionRecta = calcularEcuacionRecta(coeficientes);
         mostrarEcuacionRecta(solucionRecta);
     }

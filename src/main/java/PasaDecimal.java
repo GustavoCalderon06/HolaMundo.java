@@ -13,22 +13,22 @@ public class PasaDecimal {
         String tunc;
 
 
-        Scanner n = new Scanner(System.in);
+        Scanner leer = new Scanner(System.in);
 
         System.out.println("Inserta un numero: ");
-        nLeido = n.nextDouble();
+        nLeido = leer.nextDouble();
 
-        for(double i=1; i<=100; i++){
+        for(double i=1; i<=10; i++){
 
-            for(double j=1; j<=100; j++){
+            for(double j=1; j<=10; j++){
 
 
-                tunc = String.format("%.5f", i / j);
-                nGuardado = String.format("%.5f", nLeido);
+                tunc = String.format("%.2f", i / j);
+                nGuardado = String.format("%.2f", nLeido);
 
 
                 if(!tunc.equals(nGuardado))
-                    tunc = String.format("%.5f", ((i / j) - 0.01));
+                    tunc = String.format("%.2f", ((i / j) - 0.01));
 
 
                 if(nGuardado.equals(tunc) )
