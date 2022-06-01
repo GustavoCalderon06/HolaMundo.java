@@ -2,8 +2,6 @@
 *agregar
 -integrales
 -derivadas
--ecuaciones de tercer grado
--decimales a fraccion
 */
 import java.util.LinkedList;
 import java.util.Scanner;
@@ -54,27 +52,6 @@ public class CalculadoraCientifica {
         return numeros;
     }
 
-    public static void ecuacionCuadratica() {
-        String[] parametrosCuadratica = {"a","b","c"};
-        double[] coeficientes = ingresarCoeficientes(parametrosCuadratica);
-        double[] solucionesCuadratica = calcularEcuacionCuadratica(coeficientes);
-        mostrarEcuacionCuadratica(solucionesCuadratica);
-    }
-
-    public static void sistemaEcuaciones() {
-        String[] parametrosSistemaEcuaciones = {"a1","b1","c1","a2","b2","c2"};
-        double[] coeficientes = ingresarCoeficientes(parametrosSistemaEcuaciones);
-        double[] solucionesSistema = calcularSistemaEcuaciones(coeficientes);
-        mostrarSistemaEcuaciones(solucionesSistema);
-    }
-
-    public static void ecuacionRecta() {
-        String[] parametrosRecta = {"x1","y1","x2","y2"};
-        double[] coeficientes = ingresarCoeficientes(parametrosRecta);
-        double[] solucionRecta = calcularEcuacionRecta(coeficientes);
-        mostrarEcuacionRecta(solucionRecta);
-    }
-
     public static double[] ingresarCoeficientes(String[] parametros) {
         double[] coeficientes = new double[parametros.length];
         for (int i = 0; i < coeficientes.length; i++) {
@@ -82,69 +59,6 @@ public class CalculadoraCientifica {
             coeficientes[i] = leer.nextDouble();
         }
         return coeficientes;
-    }
-
-    public static double[] calcularEcuacionCuadratica(double[] coeficientes) {
-        double[] solucionesCuadratica = new double[2];
-        double a = coeficientes[0];
-        double b = coeficientes[1];
-        double c = coeficientes[2];
-        double discriminante = (Math.pow(b,2)-(4*a*c));
-        if(discriminante<0){
-            System.out.println("Solución no real");
-        }else{
-            double raizDiscriminante = Math.sqrt(discriminante);
-            double x1 = (-b+raizDiscriminante)/(2*a);
-            double x2 = (-b-raizDiscriminante)/(2*a);
-            solucionesCuadratica[0] = x1;
-            solucionesCuadratica[1] = x2;
-        }
-        return solucionesCuadratica;
-    }
-
-    public static double[] calcularSistemaEcuaciones(double[] coeficientes) {
-        double[] solucionesSistema = new double[2];
-        double a1 = coeficientes[0];
-        double b1 = coeficientes[1];
-        double c1 = coeficientes[2];
-        double a2 = coeficientes[3];
-        double b2 = coeficientes[4];
-        double c2 = coeficientes[5];
-        double x,y;
-        y = ((c2 * a1) - (a2 * c1)) / ((b2 * a1) - (a2 * b1));
-        x = (c1 - (b1 * y)) / a1;
-        solucionesSistema[0] = x;
-        solucionesSistema[1] = y;
-        return solucionesSistema;
-    }
-
-    public static double[] calcularEcuacionRecta(double[] coeficientes) {
-        double[] solucionRecta = new double[2];
-        double x1 = coeficientes[0];
-        double y1 = coeficientes[1];
-        double x2 = coeficientes[2];
-        double y2 = coeficientes[3];
-        double pendiente = (y2 - y1) / (x2 - x1);
-        double b = ((-x1)*pendiente)+y1;
-        solucionRecta[0] = pendiente;
-        solucionRecta[1] = b;
-        return solucionRecta;
-    }
-
-    public static void mostrarEcuacionCuadratica(double[] solucionesCuadratica) {
-        System.out.println("Las soluciones de la ecuación son: ");
-        System.out.println("x1 = "+solucionesCuadratica[0]);
-        System.out.println("x2 = "+solucionesCuadratica[1]);
-    }
-
-    public static void mostrarSistemaEcuaciones(double[] solucionesSistema) {
-        System.out.println("Las soluciones del sistema son: ");
-        System.out.println("x = "+solucionesSistema[0]);
-        System.out.println("y = "+solucionesSistema[1]);
-    }
-
-    public static void mostrarEcuacionRecta(double[] solucionRecta) {
-        System.out.println("La ecuación de la recta es: "+"y = "+solucionRecta[0]+"x + "+solucionRecta[1]);
     }
 
     public static void factoriales() {
@@ -172,73 +86,10 @@ public class CalculadoraCientifica {
         resultado(a);
     }
 
-    public static void seno(){
-        String[] operadores={"numero: "};
-        double[] numeros=ingresarNumeros(operadores);
-        double grado=Math.sin(numeros[0]);
-        resultado(grado);
-    }
-
-    public static void coseno(){
-        String[] operadores={"numero: "};
-        double[] numeros=ingresarNumeros(operadores);
-        double grado=Math.cos(numeros[0]);
-        resultado(grado);
-    }
-
-    public static void tangente(){
-        String[] operadores={"numero: "};
-        double[] numeros=ingresarNumeros(operadores);
-        double a=Math.tan(numeros[0]);
-        resultado(a);
-    }
-
     public static void logaritmo10(){
         String[] operadores={"numero: "};
         double[] numeros=ingresarNumeros(operadores);
         double a=Math.log10(numeros[0]);
-        resultado(a);
-    }
-
-    public static void senoHiperbolico(){
-        String[] operadores={"numero: "};
-        double[] numeros=ingresarNumeros(operadores);
-        double a=Math.sinh(numeros[0]);
-        resultado(a);
-    }
-
-    public static void cosenoHiperbolico(){
-        String[] operadores={"numero: "};
-        double[] numeros=ingresarNumeros(operadores);
-        double a=Math.cosh(numeros[0]);
-        resultado(a);
-    }
-
-    public static void tangenteHiperbolica(){
-        String[] operadores={"numero: "};
-        double[] numeros=ingresarNumeros(operadores);
-        double a=Math.tanh(numeros[0]);
-        resultado(a);
-    }
-
-    public static void aSeno(){
-        String[] operadores={"numero: "};
-        double[] numeros=ingresarNumeros(operadores);
-        double a=Math.asin(numeros[0]);
-        resultado(a);
-    }
-
-    public static void aCoseno(){
-        String[] operadores={"numero: "};
-        double[] numeros=ingresarNumeros(operadores);
-        double a=Math.acos(numeros[0]);
-        resultado(a);
-    }
-
-    public static void aTangente(){
-        String[] operadores={"numero: "};
-        double[] numero=ingresarNumeros(operadores);
-        double a=Math.atan(numero[0]);
         resultado(a);
     }
 
@@ -254,8 +105,6 @@ public class CalculadoraCientifica {
         resultado(a);
 
     }
-
-
 
     public static void agregarDivisores(LinkedList<Double> Divisores, Double numero) {
         for (int i=1;i<(numero+1);i++){

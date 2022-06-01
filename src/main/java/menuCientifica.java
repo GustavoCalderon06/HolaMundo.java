@@ -9,10 +9,6 @@ public class menuCientifica {
         }catch (Exception e){
             System.out.println("Valor no valido.");
         }
-        new FigurasGeometricas();
-        new Matrices();
-        new CalculadoraCientifica();
-        new calculadoraBasica();
     }
 
     public static void menuCalculadora(){
@@ -50,16 +46,16 @@ public class menuCientifica {
                         CalculadoraCientifica.porcentaje();
                         break;
                     case 10:
-                        CalculadoraCientifica.ecuacionCuadratica();
+                        ecuaciones.ecuacionCuadratica();
                         break;
                     case 11:
                         FigurasGeometricas.figurasGeometricas();
                         break;
                     case 12:
-                        CalculadoraCientifica.sistemaEcuaciones();
+                        ecuaciones.sistemaEcuaciones();
                         break;
                     case 13:
-                        CalculadoraCientifica.ecuacionRecta();
+                        ecuaciones.ecuacionRecta();
                         break;
                     case 14:
                         CalculadoraCientifica.factoriales();
@@ -74,49 +70,40 @@ public class menuCientifica {
                         CalculadoraCientifica.logaritmo10();
                         break;
                     case 18:
-                        CalculadoraCientifica.seno();
+                        trigonometricas.seno();
                         break;
                     case 19:
-                        CalculadoraCientifica.coseno();
+                        trigonometricas.coseno();
                         break;
                     case 20:
-                        CalculadoraCientifica.tangente();
+                        trigonometricas.tangente();
                         break;
                     case 21:
-                        CalculadoraCientifica.aSeno();
+                        trigonometricas.aSeno();
                         break;
                     case 22:
-                        CalculadoraCientifica.aCoseno();
+                        trigonometricas.aCoseno();
                         break;
                     case 23:
-                        CalculadoraCientifica.aTangente();
+                        trigonometricas.aTangente();
                         break;
                     case 24:
-                        CalculadoraCientifica.senoHiperbolico();
-                        break;
-                    case 25:
-                        CalculadoraCientifica.cosenoHiperbolico();
-                        break;
-                    case 26:
-                        CalculadoraCientifica.tangenteHiperbolica();
-                        break;
-                    case 27:
                         Matrices.menuMatriz();
                         break;
-                    case 28:
+                    case 25:
                         CalculadoraCientifica.valorAbsoluto();
                         break;
-                    case 29:
+                    case 26:
                         CalculadoraCientifica.sumatoria();
                         break;
-                    case 30:
+                    case 27:
                         CalculadoraCientifica.cbrt();
                         break;
-                    case 31:
+                    case 28:
                         break;
                 }
-            } while (eleccion < 1 || eleccion > 31);
-        }while (eleccion != 31);
+            } while (eleccion < 1 || eleccion > 28);
+        }while (eleccion != 28);
     }
 
     public static void mostrarOpcionesMenu(){
@@ -145,13 +132,10 @@ public class menuCientifica {
         System.out.println("[21] Arco Seno");
         System.out.println("[22] Arco Coseno");
         System.out.println("[23] Arco Tangente");
-        System.out.println("[24] Seno hiperbolico");
-        System.out.println("[25] Coseno hiperbolico");
-        System.out.println("[26] Tangente hiperbolica");
-        System.out.println("[27] Matriz");
-        System.out.println("[28] Valor absoluto");
-        System.out.println("[29] Sumatoria");
-        System.out.println("[30] Raiz cubica");
-        System.out.println("[31] Salir");
+        System.out.println("[24] Matriz");
+        System.out.println("[25] Valor absoluto");
+        System.out.println("[26] Sumatoria");
+        System.out.println("[27] Raiz cubica");
+        System.out.println("[28] Salir");
     }
 }
