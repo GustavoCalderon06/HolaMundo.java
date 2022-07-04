@@ -6,6 +6,9 @@ import Guis.VentanaSistemaEcuaciones;
 import Guis.VentanasPerimetros;
 
 public class Launcher {
+    /**
+     * @param args
+     */
     public static void main(String[] args) {
         //VentanaM3x3 ventanaM3x3 = new VentanaM3x3("MATRICES",500,500);
         //VentanaEcuacionCuadratica ventanaEcuacionCuadratica = new VentanaEcuacionCuadratica("ECUACIONES CUADRATICAS",500,500);
