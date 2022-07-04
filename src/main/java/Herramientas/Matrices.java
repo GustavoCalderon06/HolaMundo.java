@@ -1,6 +1,5 @@
-/*
-* -matriz de 4x4
-* */
+package Herramientas;
+
 import java.util.Scanner;
 
 public class Matrices {
@@ -22,10 +21,13 @@ public class Matrices {
                         generarMatriz3();
                         break;
                     case 3:
+                        generarMatriz4();
+                        break;
+                    case 4:
                         break;
                 }
-            }while (eleccion<1 || eleccion>3);
-        }while(eleccion != 3);
+            }while (eleccion<1 || eleccion>4);
+        }while(eleccion != 4);
 
     }
 
@@ -33,7 +35,8 @@ public class Matrices {
         System.out.println("=====MENU=====");
         System.out.println("[1] Generar matriz 2x2");
         System.out.println("[2] Generar matriz 3x3");
-        System.out.println("[3] Salir");
+        System.out.println("[3] Generar matriz 4x4");
+        System.out.println("[4] Salir");
     }
 
     public static void generarMatriz2(){
@@ -154,7 +157,7 @@ public class Matrices {
         }
     }
 
-    public static void determinante3x3(double[][] matriz){
+    public static double determinante3x3(double[][] matriz){
         double sumado1=(matriz[0][0]*matriz[1][1]*matriz[2][2]);
         double sumado2=(matriz[1][0]*matriz[2][1]*matriz[0][2]);
         double sumado3=(matriz[2][0]*matriz[0][1]*matriz[1][2]);
@@ -163,8 +166,61 @@ public class Matrices {
         double restado3=-(matriz[2][2]*matriz[0][1]*matriz[1][0]);
         double sumadoT=sumado1+sumado2+sumado3;
         double restadoT=restado1+restado2+restado3;
-        double resutado=sumadoT+restadoT;
-        CalculadoraCientifica.resultado(resutado);
+        //CalculadoraCientifica.resultado(resutado);
+        return sumadoT+restadoT;
     }
 
+    public static void generarMatriz4(){
+        double[][] matriz4x4 = new double[4][4];
+        ingresarcoeficientes(matriz4x4);
+        menu4x4(matriz4x4);
+    }
+
+    public static void menu4x4(double[][] matriz) {
+        int eleccion;
+        do {
+            do {
+                opcionesMenu4x4();
+                eleccion=leer.nextInt();
+                switch (eleccion){
+                    case 1:
+                        llenarMatriz(matriz);
+                        break;
+                    case 2:
+                        llenarAll(matriz);
+                        break;
+                    case 3:
+                        determinante4x4(matriz);
+                        break;
+                    case 4:
+                        break;
+                }
+            }while (eleccion<1 || eleccion>4);
+        }while (eleccion!=4);
+    }
+
+    public static void opcionesMenu4x4() {
+        System.out.println("=====MENU=====");
+        System.out.println("[1] Llenar matriz");
+        System.out.println("[2] Llenar matriz aleatoriamente");
+        System.out.println("[3] Determinante");
+        System.out.println("[4] Salir");
+    }
+
+    public static void determinante4x4(double[][] matriz) {
+        double sumafila1=(matriz[1][1]*matriz[2][2]*matriz[3][3])+(matriz[2][1]*matriz[3][2]*matriz[1][3])+(matriz[3][1]*matriz[1][2]*matriz[2][3]);
+        double restafila1=-(matriz[1][3]*matriz[2][2]*matriz[3][1])-(matriz[2][3]*matriz[3][2]*matriz[1][1])-(matriz[1][2]*matriz[2][1]*matriz[3][3]);
+        double sumafila2=(matriz[0][1]*matriz[2][2]*matriz[3][3])+(matriz[2][1]*matriz[3][2]*matriz[0][3])+(matriz[3][1]*matriz[0][2]*matriz[2][3]);
+        double restafila2=-(matriz[0][3]*matriz[2][2]*matriz[3][1])-(matriz[2][3]*matriz[3][2]*matriz[0][1])-(matriz[0][2]*matriz[2][1]*matriz[3][3]);
+        double sumafila3=(matriz[0][1]*matriz[1][2]*matriz[3][3])+(matriz[1][1]*matriz[3][2]*matriz[0][3])+(matriz[3][1]*matriz[0][2]*matriz[1][3]);
+        double restafila3=-(matriz[0][3]*matriz[1][2]*matriz[3][1])-(matriz[1][3]*matriz[3][2]*matriz[0][1])-(matriz[0][2]*matriz[1][1]*matriz[3][3]);
+        double sumafila4=(matriz[0][1]*matriz[1][2]*matriz[2][3])+(matriz[1][1]*matriz[2][2]*matriz[0][3])+(matriz[2][1]*matriz[0][2]*matriz[1][3]);
+        double restafila4=-(matriz[0][3]*matriz[1][2]*matriz[2][1])-(matriz[1][3]*matriz[2][2]*matriz[0][1])-(matriz[0][2]*matriz[1][1]*matriz[2][3]);
+        double fila1=matriz[0][0]*(sumafila1+restafila1);
+        double fila2=(-matriz[1][0])*(sumafila2+restafila2);
+        double fila3=matriz[2][0]*(sumafila3+restafila3);
+        double fila4=(-matriz[3][0])*(sumafila4+restafila4);
+        double resultado=fila1+fila2+fila3+fila4;
+        CalculadoraCientifica.resultado(resultado);
+    }
 }

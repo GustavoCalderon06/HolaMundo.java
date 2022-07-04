@@ -1,4 +1,6 @@
-//-ecuaciones de tercer grado
+package Herramientas;
+
+//-Calculos.ecuaciones de tercer grado
 public class ecuaciones {
 
     public static void ec(){

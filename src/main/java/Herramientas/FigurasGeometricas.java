@@ -1,3 +1,5 @@
+package Herramientas;
+
 import java.util.Scanner;
 
 public class FigurasGeometricas {

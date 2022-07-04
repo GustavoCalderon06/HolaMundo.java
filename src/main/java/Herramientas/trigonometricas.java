@@ -1,3 +1,5 @@
+package Herramientas;
+
 public class trigonometricas {
 
     public static void seno(){
