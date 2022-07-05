@@ -1,9 +1,6 @@
 package Launcher;
 
-import Guis.VentanaCalculadoraCientifica;
-import Guis.VentanaM3x3;
-import Guis.VentanaSistemaEcuaciones;
-import Guis.VentanasPerimetros;
+import Guis.*;
 
 public class Launcher {
     /**
@@ -15,6 +12,7 @@ public class Launcher {
         //VentanaEcuacionesRecta ventanaEcuacionesRecta = new VentanaEcuacionesRecta("ECUACIONES DE LA RECTA",500,500);
         //VentanaSistemaEcuaciones ventanaSistemaEcuaciones = new VentanaSistemaEcuaciones("SISTEMA DE ECUACIONES",500, 500);
         //VentanasPerimetros ventanasPerimetros = new VentanasPerimetros("PERIMETROS",500,500);
-        VentanaCalculadoraCientifica ventanaCalculadoraCientifica=new VentanaCalculadoraCientifica();
+        //VentanaCalculadoraCientifica ventanaCalculadoraCientifica=new VentanaCalculadoraCientifica();
+        VentanaCalculadoraBasica calculadoraBasica = new VentanaCalculadoraBasica("Calculadora",500,500);
     }
 }
